@@ -1,5 +1,7 @@
 # Wazuh SIEM Deployment and Security Monitoring Infrastructure
 
+> **Evidence scope:** Implementation and validation results below are historical observations reported by the lab author. Supporting sanitized outputs are not included in this repository; this documentation review did not rerun the commands or verify live system state.
+
 ## Project Overview
 
 Deployed a self-hosted Wazuh security monitoring environment within the PORTERLAB Enterprise Cybersecurity Homelab to develop practical experience with SIEM architecture, endpoint monitoring, centralized security telemetry, and security infrastructure administration.
@@ -145,7 +147,9 @@ The Wazuh Manager processes incoming agent information and applies its analysis 
 
 ### Indexing and Storage
 
-The Wazuh Indexer stores indexed security monitoring data for subsequent retrieval and analysis.
+For the documented Wazuh 4.x architecture, Filebeat forwards generated alert data from the manager to the Wazuh Indexer. The indexer stores that data for retrieval and analysis; the dashboard queries it for visualization. This does not imply that every collected event is indexed.
+
+Reference: [Wazuh server components](https://documentation.wazuh.com/current/getting-started/components/wazuh-server.html).
 
 ### Visualization
 
