@@ -1,5 +1,3 @@
-# PORTERLAB-Enterprise-Security-Lab
-Enterprise cybersecurity homelab featuring Proxmox, Active Directory, Windows endpoint hardening, Wazuh SIEM, security monitoring, and infrastructure troubleshooting.
 # PORTERLAB — Enterprise Cybersecurity Homelab
 
 ## Project Overview
@@ -38,7 +36,9 @@ The project focuses on implementing enterprise security controls, validating the
 
 ### Architecture Diagram
 
-*Network architecture diagram to be added.*
+![PORTERLAB architecture showing Proxmox, Active Directory, Windows 11, Wazuh, Docker, and Tailscale](PORTERLAB%20Homelab%20Architecture%20Overview.png)
+
+This is a conceptual overview. The arrows do not establish network segmentation, firewall rules, or verified telemetry paths. Network isolation and Tailscale routing require separate configuration evidence. The diagram uses `DC01` as a documentation label; the inventory records the server VM as `WinServ22`. The guest hostname has not been reconciled against saved evidence.
 
 ## Completed Implementations
 
@@ -120,10 +120,22 @@ Due to physical hardware storage and memory constraints, further infrastructure 
 
 ## Documentation
 
-Detailed configuration guides, technical evidence, screenshots, troubleshooting reports, and detection engineering exercises will be added as the project is documented.
+- [Infrastructure architecture and VM inventory](architecture/architecture-overview.md)
+- [Active Directory deployment](architecture/active-directory/ad-ds-deployment.md)
+- [DNS configuration](architecture/active-directory/dns-configuration.md)
+- [Organizational unit design](architecture/active-directory/ou-design.md)
+- [Group Policy security baseline](architecture/hardening/group-policy-security-baseline.md)
+- [Wazuh deployment and troubleshooting](architecture/monitoring/wazuh-deployment.md)
+- [Docker and Portainer deployment](architecture/infrastructure/docker-portainer-deployment.md)
+
+### Evidence and verification scope
+
+These documents describe the lab author's reported implementation and historical observations. Sanitized command output, GPO exports, and endpoint screenshots have not yet been committed. The documentation review does not independently verify live systems or reproduce the reported results. Specific Windows event ingestion, detection coverage, effective policy settings, and network isolation remain subject to the limitations stated in each guide.
+
+Software versions describe the recorded deployment, not a claim that the systems are currently patched or supported. Docker/Portainer was deployed previously; restoring administrative access remains a documented follow-up.
 
 ## Disclaimer
 
 This environment is a personal cybersecurity research and education project. All security testing is conducted within authorized lab systems. The project does not represent a production enterprise deployment.
 
-Sensitive information, credentials, tokens, and infrastructure identifiers are excluded or sanitized before publication.
+Credentials, tokens, private keys, and actual management addresses must be excluded or sanitized before publication. The documentation retains lab labels, software versions, hardware details, and the lab domain for context; DNS address examples use reserved documentation ranges.
