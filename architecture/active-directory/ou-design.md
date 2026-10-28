@@ -1,5 +1,7 @@
 # Active Directory Organizational Unit Design
 
+> **Evidence scope:** Implementation and validation results below are historical observations reported by the lab author. Supporting sanitized outputs are not included in this repository; this documentation review did not rerun the commands or verify live system state.
+
 ## Overview
 
 Designed and implemented a hierarchical Organizational Unit (OU) structure within the PORTERLAB Active Directory environment to support centralized identity administration, computer organization, security policy management, and future role-based access control.
