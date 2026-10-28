@@ -1,5 +1,7 @@
 # PORTERLAB — Infrastructure Architecture
 
+> **Evidence scope:** Implementation and validation results below are historical observations reported by the lab author. Supporting sanitized outputs are not included in this repository; this documentation review did not rerun the commands or verify live system state.
+
 ## Objective
 
 Design and operate a virtualized enterprise-style environment for practicing Windows systems administration, identity management, endpoint hardening, centralized security monitoring, and detection engineering.
@@ -17,14 +19,18 @@ Design and operate a virtualized enterprise-style environment for practicing Win
 
 ## Virtual Machine Inventory
 
-| VMID | Hostname | Role | RAM | Virtual Disk |
+| VMID | VM label / documented name | Role | RAM | Virtual Disk |
 |---|---|---|---|---|
 | 100 | ubuntu-docker1 | Container experimentation | 2 GB | 32 GB |
 | 101 | WinServ22 | Windows Server 2022 / AD DS / DNS | 6 GB | 64 GB |
 | 102 | WIN11-01 | Domain-joined Windows 11 endpoint | 4 GB | 64 GB |
 | 103 | WAZUH01 | Ubuntu / Wazuh SIEM | 8 GB | 50 GB |
 
-These figures represent configured virtual resources, not simultaneous hardware consumption.
+These figures represent configured virtual resources. Guest RAM allocation totals 20 GiB, with additional memory needed for Proxmox and virtualization overhead. Thin-provisioned virtual disk capacity differs from actual physical usage.
+
+The inventory records `WinServ22` for VM 101, while the diagram and DNS guide use `DC01`. These labels have not been verified as the guest hostname.
+
+[View the conceptual architecture diagram](../PORTERLAB%20Homelab%20Architecture%20Overview.png)
 
 ## Identity Infrastructure
 
