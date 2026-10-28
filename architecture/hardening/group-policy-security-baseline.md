@@ -1,5 +1,7 @@
 # Windows Group Policy Security Baseline
 
+> **Evidence scope:** Implementation and validation results below are historical observations reported by the lab author. Supporting sanitized outputs are not included in this repository; this documentation review did not rerun the commands or verify live system state.
+
 ## Project Overview
 
 Implemented Windows endpoint security hardening through Active Directory Group Policy in the PORTERLAB Enterprise Cybersecurity Homelab.
@@ -43,7 +45,9 @@ Configured an authentication lockout threshold to reduce exposure to repeated pa
 |---|---|
 | Account lockout threshold | 10 failed authentication attempts |
 
-Account lockout policies can help reduce the effectiveness of repeated password guessing against domain accounts.
+Account lockout policies can help reduce repeated password guessing. The threshold alone does not establish effective protection: the lockout duration, counter reset interval, applicable accounts, and effective domain policy still need supporting evidence. A GPO appearing in `gpresult /r` does not prove each individual setting took effect.
+
+Reference: [Microsoft account lockout policy](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/account-lockout-policy).
 
 **Security considerations:**
 
