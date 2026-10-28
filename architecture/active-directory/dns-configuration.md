@@ -1,5 +1,7 @@
 # DNS Server Configuration and Active Directory Integration
 
+> **Evidence scope:** Implementation and validation results below are historical observations reported by the lab author. Supporting sanitized outputs are not included in this repository; this documentation review did not rerun the commands or verify live system state.
+
 ## Project Overview
 
 Configured and validated Windows Server DNS within the PORTERLAB Enterprise Cybersecurity Homelab to support Active Directory Domain Services (AD DS), internal hostname resolution, and domain controller service discovery.
